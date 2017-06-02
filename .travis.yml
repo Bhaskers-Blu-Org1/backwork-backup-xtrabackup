@@ -1,0 +1,21 @@
+sudo: false
+language: python
+python:
+- '2.7'
+- '3.6'
+install:
+- pip install -r requirements.txt
+script:
+- pylint xtrabackup setup.py
+deploy:
+  provider: pypi
+  user: leonsp@ca.ibm.com
+  password:
+    secure: BMgL5LOpLpnmfhADuku8CXx57/wJRIVsmN5LCSU0pzics4HWI4QAlfLSaW7s1xQyzTj6I2zmTyao0XH9u5uY9qwsBnh5+q9u0F63VGBRyOVpHLOfyeypVNS1pYm+VaRl5QcREvD56frPwdmUduQW6eGG5NwQoX8ODYVo5Q56b73DUqb+NXwU7NeP+70laUekb/Xir1CFUkFRIoEbIymot7oBXBcqXQALmtQzjXH25S8lMnH4meLeJrGFC1wFwePSAdSALJKcklW8hQWcpMf5K1qUKollOMagReTwQEj/ddrGQNyALcZ7mg8EYr9sxY0OcgEX6GZEiKfeE2gjLzuaOwWOf3bkC2IAU8jfYLIXcXfnllZ9t6Qp5Q8u4G6AgrkXzIrQbomIedRtUNXulmN5ZpIqdALZpOWwiAn+Ag+mZ+s1L6C6UE+ibo1f4Tv6ACF2HK65QZLkQL4326jLZ1rIXoKGMsA5C5HPgIsVv8Zbo8zgt4RJHTtmCxUobf+qY82Q3XPYrlx799u6jiV4snceRbXHqaXhKulLce4ecKYv03d5ZSwL+8AIlpbRE/Oj2f3syceuKpFOP1+5eThe0NDR6iPSEkQRaDp8YLkKa48/g0RE0CFwaULqdP9L5nJUHUA/Mr2GXanbALX5zqnIV7IZs/Qokk+mLhFuiiF1UTva2KU=
+  server: https://na.artifactory.swg-devops.com/artifactory/api/pypi/apset-pypi-local
+  on:
+    python: '2.7'
+    tags: true
+notifications:
+  slack:
+    secure: EvcFxI8CddcjTjRPQYlh4SSyedYV55RRRyFBfuT9bpb0WRdmsOfsdyzCyJ2LjcqKlJ9IJIXd2oS9RQniSLgoc77KRyFhyX3ZnYr/v+d2Dk/IVWF7gDyMZ1UaYMhmnyXgX3SrUnu3uL5ID3KjsfQh5C7fATlj+M6k1qBLrpSJ8Q2rSkDEGOdtLKNAPp/eamXXizZcNUXmLXqqKhtOB8hvAtzVaXNxypfSkYQu9YpqS8GWwnK9EWgjMw0axPJ80iE9wlXDcOax5DdROfhbz9E8NZjaCSjadqPij3OebINI0ToRYlCvtjOQ32nx3av1rJV5rZ33/vn2Uq15RBOW/dkTI4ilQ+6ymlKVuDs+PsLzpYXmkT2XZJo+KXENUc+1MYxhpewmtio/KpV/1ecbtpzWFeFM/beLmrASePoKOgiNvH66b+ifSP4sQsFBZMhccF5px6+kiW3i8A1jY3mEyO9Ubh0jRl4bRdhaMqS5CqM5B7Vs86xiWoZqF+XEE4CPTT5oKTWptLEdXKTkJHkOLHohjjYKu2YT41Bm7jIng3CXD2Ej26bg65VHs78v/g/z5qimxrBgW1VgbUST+PpCyjb2CPNoAU++QgdstHX8Z4usPi2PpvP/zm+hGH4yCIDKvbSapGyC/aemlNQm2v7Pe+qNNFpqv/eVAn9YBS2kmMeNfA=B0imf80sSJWy
