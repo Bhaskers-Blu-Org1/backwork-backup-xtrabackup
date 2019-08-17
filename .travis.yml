@@ -1,0 +1,16 @@
+language: python
+python: '3.6'
+cache:
+  pip: true
+install:
+- pip install .
+script:
+- echo "no tests implemented"
+deploy:
+  - provider: pypi
+    user: __token__
+    password:
+      secure: gGIPwcLms33h6q38o07Kz/gUh97qp+ebbk/QE4rAaY4jrSgSGJvDHoIS2q0xiwTi7mHg3ALaWPSKv11MrtBQIv5OdhYTKhYvUZIWeBh2SYLqp0PMmea9k60o6qWb8rr2em+Y59kpR6qzUxRe+ebXw6hy08vTIHnbtREWa3SfRA7V8tnfWgweFVHh9VOpNrZIDwJu50YOtEc+YYzowSIWzbRlg81jhSjojgweTSMqaqvcWHZ8rdiJYUOvfl/Wvfb5hQf/Jpboq62/e5FmgUY3HspDMlAB3nnZAAE3Byl0pJ+8MkzYWS4BH7CHwXcwPQ1lWikHga+6RhQO6391HqmYAi/jzS+7QDRGIFaCtYjcH58TF2aUr0Sl35z3rZFv667St8anUeKmj23+UAWP1eG4e1Zm/jCYnX/AOaYAhsb3b04nH1EjBOWj0GvVBRsYNEmrdDI8crzBQQTlcqu6P0ulJ4K/EnVk2d8QO5+EcGfkKOsFoQG24mUtwBPLk448kPIL568mnbydbKl5YJb9JEzyV/iw5xq/TJNs0oYPovB6+OXppVUU0SH8a0en0z5m8kU5Yur7LQ0WG8ALfjsf176CyPZb+RLuvQeucZKhj189QeSzSYeOm5Rwmby0E5iOiQ395E7FilPfoKQ9riamUJwu339xIrnB3gToU9VH2OajcEc=
+    on:
+      tags: true
+      repo: IBM/backwork-backup-xtrabackup
