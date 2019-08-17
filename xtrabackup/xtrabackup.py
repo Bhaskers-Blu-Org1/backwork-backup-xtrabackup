@@ -1,4 +1,4 @@
-"""Xtrabackup for Monsoon
+"""Xtrabackup for Backwork
 """
 
 import subprocess
@@ -8,7 +8,7 @@ LOG = logging.getLogger(__name__)
 
 
 class XtraBackupBackup(object):
-    """Xtrabackup plugin for Monsoon"""
+    """Xtrabackup plugin for Backwork"""
     command = "xtrabackup"
 
     def __init__(self, args, extra):
@@ -28,7 +28,8 @@ class XtraBackupBackup(object):
         cmd = ["xtrabackup", "--backup"] + self.extra
 
         try:
-            self.result = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+            self.result = subprocess.check_output(
+                cmd, stderr=subprocess.STDOUT)
             LOG.info("output:\n\n\t%s", "\n\t".join(self.result.split("\n")))
             LOG.info("backup complete")
 

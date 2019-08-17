@@ -1,4 +1,4 @@
-"""Xtrabackup for Monsoon
+"""Xtrabackup for Backwork
 """
 
 from .xtrabackup import XtraBackupBackup
