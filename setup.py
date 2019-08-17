@@ -12,7 +12,7 @@ with open(path.join(HERE, 'README.md')) as f:
 
 setup(
     name="backwork-backup-xtrabackup",
-    version="0.1.1",
+    version="0.2.0",
     description="Backwork plug-in for Percona XtraBackup backups.",
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
